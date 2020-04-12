@@ -345,9 +345,9 @@ class BaseModel {
    *
    * @return {Object}
    */
-  toJSON () {
+  toJSON (...args) {
     const Serializer = this.constructor.resolveSerializer()
-    return new Serializer(this, null, true).toJSON()
+    return new Serializer(this, null, true).toJSON(...args)
   }
 }
 
